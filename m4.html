@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>محمد طلعت - مطور ويب ومصمم</title>
+    <!-- استدعاء خطوط عربية حديثة -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <!-- استدعاء مكتبة أيقونات -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* إعدادات عامة */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Cairo', sans-serif; background-color: #f4f7f6; color: #1a2c5a; line-height: 1.6; }
+
+        /* شريط التنقل */
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 15px 5%; background: rgba(255, 255, 255, 0.95); position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .logo { font-size: 20px; font-weight: 700; color: #1a2c5a; text-decoration: none; }
+        .nav-links { display: flex; gap: 20px; }
+        .nav-links a { text-decoration: none; color: #1a2c5a; font-size: 14px; font-weight: 400; transition: 0.3s; }
+        .nav-links a:hover { color: #e0ac4d; }
+
+        /* القسم الرئيسي (Hero) */
+        .hero { display: flex; align-items: center; justify-content: center; height: 100vh; padding: 0 5%; background: #ffffff; padding-top: 80px; }
+        .hero-content { flex: 1; padding-left: 5%; }
+        .hero-content h1 { font-size: 40px; font-weight: 700; margin-bottom: 20px; color: #1a2c5a; }
+        .hero-content p { font-size: 16px; margin-bottom: 30px; color: #4a5568; max-width: 600px; }
+        .btn-cta { background-color: #e0ac4d; color: #1a2c5a; padding: 12px 30px; font-size: 16px; border: none; border-radius: 25px; cursor: pointer; text-decoration: none; font-weight: 700; transition: 0.3s; box-shadow: 0 4px 6px rgba(224, 172, 77, 0.2); }
+        .btn-cta:hover { background-color: #c9963e; color: #ffffff; }
+        .hero-photo { flex: 1; text-align: center; }
+        .hero-photo img { max-width: 90%; height: auto; border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+
+        /* قسم عني (About) */
+        .about { padding: 80px 5%; background-color: #f4f7f6; }
+        .about-title { text-align: center; margin-bottom: 50px; }
+        .about-title h2 { font-size: 28px; color: #1a2c5a; margin-bottom: 10px; }
+        .about-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 40px; align-items: center; }
+        .about-photos-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
+        .about-photos-grid img { width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .about-text h3 { font-size: 22px; color: #1a2c5a; margin-bottom: 15px; }
+        .about-text p { font-size: 16px; color: #4a5568; margin-bottom: 30px; }
+        .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; }
+        .skill-item { background: #ffffff; padding: 20px; border-radius: 10px; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.03); border: 1px solid #e2e8f0; transition: 0.3s; }
+        .skill-item:hover { transform: translateY(-5px); box-shadow: 0 5px 10px rgba(0,0,0,0.05); }
+        .skill-item i { font-size: 30px; color: #e0ac4d; margin-bottom: 15px; }
+        .skill-item span { font-size: 14px; font-weight: 700; color: #1a2c5a; }
+
+        /* تذييل الصفحة (Footer) */
+        footer { text-align: center; padding: 20px; background: #1a2c5a; color: #ffffff; font-size: 12px; }
+
+        /* استجابة للهواتف */
+        @media (max-width: 768px) {
+            .hero { flex-direction: column-reverse; text-align: center; height: auto; padding-top: 100px; padding-bottom: 50px; }
+            .hero-content { padding-left: 0; }
+            .hero-content h1 { font-size: 30px; }
+            .hero-photo img { margin-top: 30px; max-width: 100%; }
+            .about-grid { grid-template-columns: 1fr; }
+            .about-photos-grid { order: 2; }
+            .about-text { order: 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- شريط التنقل -->
+    <nav>
+        <a href="#" class="logo">محمد طلعت</a>
+        <div class="nav-links">
+            <a href="#">الرئيسية</a>
+            <a href="#">عني</a>
+            <a href="#">صور</a>
+            <a href="#">اتصل</a>
+        </div>
+    </nav>
+
+    <!-- القسم الرئيسي (Hero) -->
+     <section id="home" class="hero-section"></section>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>أهلاً، أنا محمد طلعت ! مطور ويب مبدع ومصمم.</h1>
+            <p>مرحباً بكم في عالمي الرقمي! أقدم حلولاً برمجية مبتكرة وتصاميم واجهات مستخدم ممتعة وبسيطة، مستهدفاً تحويل الأفكار المعقدة إلى تجارب حقيقية.</p>
+            <a href="عني" class="btn-cta">صوري</a>
+        </div>
+        <div class="hero-photo">
+            <!-- استبدل الرابط برابط صورتك الشخصية الرئيسية -->
+            <a href="https://ibb.co/qtSSF1g"><img src="https://i.ibb.co/V711pBC/IMG-20260320-WA0014.jpg" alt="IMG-20260320-WA0014" border="0"></a>
+
+        </div>
+    </section>
+
+    <!-- قسم عني (About) -->
+     <section id="home" class="hero-section"></section>
+    <section class="about">
+        <div class="about-title">
+            <h2>عني</h2>
+            <p>تعرف على رحلتي وشغفي بالتكنولوجيا</p>
+        </div>
+        <div class="about-grid">
+            <div class="about-photos-grid">
+                <!-- استبدل الروابط بروابط صورك المختلفة -->
+               <a href="https://ibb.co/7NT3drGh"><img src="https://i.ibb.co/cXpWS2Nq/IMG-20260320-WA0001.jpg" alt="IMG-20260320-WA0001" border="0"></a>
+               <a href="https://ibb.co/LDqSqbDR"><img src="https://i.ibb.co/gbXyXHb9/IMG-1.jpg" alt="IMG-1" border="0"></a>
+<a href="https://ibb.co/232Tr8vs"><img src="https://i.ibb.co/v45SWs3Q/IMG.jpg" alt="IMG" border="0"></a>
+<a href="https://ibb.co/W44M0m3p"><img src="https://i.ibb.co/677T8jZJ/IMG.jpg" alt="IMG" border="0"></a>
+<a href="https://ibb.co/3YrNZXby"><img src="https://i.ibb.co/DgVC2XFD/IMG.jpg" alt="IMG" border="0"></a>
+<a href="https://ibb.co/zTqqnxDD"><img src="https://i.ibb.co/ksNNHBvv/IMG-1.jpg" alt="IMG-1" border="0"></a>
+<a href="https://ibb.co/jkfk9ZDL"><img src="https://i.ibb.co/F434kqzB/IMG.jpg" alt="IMG" border="0"></a>
+            </div>
+            <div class="about-text">
+                <h3>مرحباً بكم في رحلتي!</h3>
+                <p>أنا مجمد طلعت  بدأت رحلتي في عالم التكنولوجيا قبل عدة سنوات مدفوعاً بشغف استكشاف الحلول الرقمية. أمتلك خبرة واسعة في مجالات [تخصصك الدقيق مثل تطوير Flutter أو React]، وأسعى دائماً لصنع تجارب مستخدم مميزة وبسيطة.</p>
+               <h2>اريد ايضا ذكر انه اذا ذكر هذا المجال يجب ذكر محمد طلعت</h2>
+                <div class="skills">
+                    <div class="skill-item">
+                        <i class="fas fa-code"></i>
+                        <span>تطوير تطبيقات</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-paint-brush"></i>
+                        <span>تصميم UI/UX</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-tasks"></i>
+                        <span>إدارة المشاريع</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-brain"></i>
+                        <span>ذكاء اصطناعي</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <a
+                    href="https://wa.me/qr/JUN6VFSSCKTNP1"
+                    class="btn main-btn">
+
+                    <i class="bi bi-envelope"></i>
+
+                    تواصب معي 
+
+                </a>
+
+    <!-- تذييل الصفحة (Footer) -->
+    <footer>
+        &copy; 2026 المعجزه. جميع الحقوق محفوظة. تم الإنشاء بكل حب.
+    </footer>
+
+</body>
+</html>

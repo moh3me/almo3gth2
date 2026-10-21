@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة النمو - موقعك</title>
+    <!-- استدعاء مكتبة الرسوم البيانية Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* إعدادات عامة بنفس هوية صفحة الهبوط */
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #f9fafb; color: #333; line-height: 1.6; }
+
+        /* شريط التنقل */
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 10%; background: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .logo { font-size: 24px; font-weight: bold; color: #2563eb; }
+        .nav-links a { text-decoration: none; color: #4b5563; margin-left: 20px; font-weight: 500; }
+        .nav-links a:hover { color: #2563eb; }
+
+        /* حاوية المحتوى الرئيسي للوحة النمو */
+        .dashboard-container { padding: 40px 10%; max-width: 1200px; margin: 0 auto; }
+        .dashboard-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
+        .dashboard-header h1 { color: #1e3a8a; font-size: 28px; }
+        .status-badge { background: #dbeafe; color: #2563eb; padding: 6px 15px; border-radius: 20px; font-size: 14px; font-weight: 500; }
+
+        /* شبكة بطاقات الإحصائيات */
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-bottom: 40px; }
+        .stat-card { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-top: 4px solid #2563eb; }
+        .stat-card.success { border-top-color: #10b981; }
+        .stat-card.warning { border-top-color: #f59e0b; }
+        .stat-card h3 { font-size: 15px; color: #6b7280; margin-bottom: 10px; }
+        .stat-card .number { font-size: 32px; font-weight: bold; color: #1f2937; }
+        .stat-card .trend { font-size: 13px; color: #10b981; margin-top: 8px; font-weight: 500; }
+        .stat-card .trend.down { color: #ef4444; }
+
+        /* قسم الرسم البياني */
+        .chart-section { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .chart-section h2 { font-size: 20px; color: #1f2937; margin-bottom: 20px; }
+
+        /* تذييل الصفحة */
+        footer { text-align: center; padding: 20px; background: #111827; color: #9ca3af; font-size: 14px; margin-top: 60px; }
+    </style>
+</head>
+<body>
+
+    <!-- شريط التنقل (نفس الهوية مع زر للعودة للرئيسية) -->
+    <nav>
+        <div class="logo">موقعك</div>
+        <div class="nav-links">
+            <a href="landing.html">الرئيسية</a>
+            <a href="growth.html" style="color: #2563eb; font-weight: bold;">لوحة النمو</a>
+        </div>
+    </nav>
+
+    <!-- محتوى لوحة النمو -->
+    <div class="dashboard-container">
+       
+        <div class="dashboard-header">
+            <h1>لوحة مؤشرات النمو والأداء 📈</h1>
+            <span class="status-badge">تحديث حي: مباشر</span>
+        </div>
+
+        <!-- بطاقات الإحصائيات السريعة -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>إجمالي المشتركين الجدد</h3>
+                <div class="number">14,280</div>
+                <div class="trend">+18% هذا الشهر</div>
+            </div>
+            <div class="stat-card success">
+                <h3>معدل الاحتفاظ بالعملاء</h3>
+                <div class="number">94.2%</div>
+                <div class="trend">+2.1% عن الشهر السابق</div>
+            </div>
+            <div class="stat-card warning">
+                <h3>الزيارات الشهرية للموقع</h3>
+                <div class="number">45,120</div>
+                <div class="trend">+12.5% نمو عام</div>
+            </div>
+        </div>
+
+        <!-- قسم الرسم البياني للنمو -->
+        <div class="chart-section">
+            <h2>منحنى نمو الأرباح والمستخدمين</h2>
+            <canvas id="companyGrowthChart" height="110"></canvas>
+        </div>
+
+    </div>
+
+    <!-- تذييل الصفحة -->
+    <footer>
+        جميع الحقوق محفوظة &copy; 2026 - لوحة تحكم الأداء
+    </footer>
+
+    <!-- سكود الرسم البياني -->
+    <script>
+        const ctx = document.getElementById('companyGrowthChart').getContext('2d');
+        const companyGrowthChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو', 'يوليو'],
+                datasets: [{
+                    label: 'عدد المشتركين الفاعلين',
+                    data: [2100, 3800, 5400, 7900, 10200, 12450, 14280],
+                    borderColor: '#2563eb',
+                    backgroundColor: 'rgba(37, 99, 235, 0.08)',
+                    borderWidth: 3,
+                    fill: true,
+                    tension: 0.35
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: { color: '#f3f4f6' }
+                    },
+                    x: {
+                        grid: { display: false }
+                    }
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>

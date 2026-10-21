@@ -1,0 +1,692 @@
+/* =========================
+   General Settings
+========================= */
+
+:root {
+    --background: #07111f;
+    --secondary-bg: #0d1b2e;
+    --card-bg: #102239;
+    --primary: #00b4ff;
+    --primary-light: #58d5ff;
+    --text: #f2f7ff;
+    --muted: #a5b4c8;
+    --border: rgba(255, 255, 255, 0.09);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+section {
+    scroll-margin-top: 80px;
+}
+
+.section-padding {
+    padding: 100px 0;
+}
+
+.alternate-section {
+    background: var(--secondary-bg);
+}
+
+
+/* =========================
+   Navigation
+========================= */
+
+.navbar {
+    background: rgba(7, 17, 31, 0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 0;
+}
+
+.navbar-brand {
+    color: var(--text) !important;
+    font-size: 25px;
+    letter-spacing: 0.5px;
+}
+
+.navbar-brand span,
+.footer-brand span {
+    color: var(--primary);
+}
+
+.nav-link {
+    color: var(--muted) !important;
+    margin-left: 12px;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    color: var(--primary) !important;
+}
+
+.contact-link {
+    border: 1px solid var(--primary);
+    border-radius: 7px;
+    padding: 8px 17px !important;
+}
+
+
+/* =========================
+   Hero Section
+========================= */
+
+.hero-section {
+    min-height: 100vh;
+    padding: 150px 0 90px;
+    display: flex;
+    align-items: center;
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(0, 180, 255, 0.12),
+            transparent 30%
+        ),
+        var(--background);
+}
+
+.welcome-text {
+    color: var(--primary);
+    font-size: 13px;
+    letter-spacing: 3px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero-content h1 {
+    font-size: clamp(35px, 5vw, 58px);
+    font-weight: 800;
+    line-height: 1.25;
+    margin-bottom: 15px;
+}
+
+.hero-content h1 span {
+    color: var(--primary);
+}
+
+.hero-content h2 {
+    font-size: 27px;
+    color: var(--muted);
+    margin-bottom: 25px;
+}
+
+.hero-description {
+    max-width: 580px;
+    color: var(--muted);
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+.main-btn {
+    background: var(--primary);
+    color: #04111e;
+    font-weight: bold;
+    border: 2px solid var(--primary);
+    border-radius: 8px;
+    padding: 12px 24px;
+    transition: 0.3s;
+}
+
+.main-btn:hover {
+    background: var(--primary-light);
+    border-color: var(--primary-light);
+    color: #04111e;
+    transform: translateY(-3px);
+}
+
+.outline-btn {
+    color: var(--text);
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 24px;
+    margin-left: 10px;
+    transition: 0.3s;
+}
+
+.outline-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    width: 43px;
+    height: 43px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    color: var(--primary);
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    background: var(--primary);
+    color: var(--background);
+    transform: translateY(-4px);
+}
+
+
+/* =========================
+   Profile Card
+========================= */
+
+.profile-card {
+    max-width: 410px;
+    margin: auto;
+    background: linear-gradient(145deg, #122b45, #0b192a);
+    border: 1px solid rgba(0, 180, 255, 0.25);
+    border-radius: 25px;
+    padding: 35px 25px;
+    box-shadow: 0 20px 70px rgba(0, 0, 0, 0.25);
+}
+
+.profile-icon {
+    width: 110px;
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background: rgba(0, 180, 255, 0.12);
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    font-size: 50px;
+}
+
+.profile-card h3 {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.profile-card > p {
+    color: var(--muted);
+}
+
+.code-window {
+    text-align: left;
+    background: #050c15;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin-top: 30px;
+    overflow: hidden;
+}
+
+.window-dots {
+    display: flex;
+    gap: 7px;
+    padding: 13px;
+    border-bottom: 1px solid var(--border);
+}
+
+.window-dots span {
+    width: 10px;
+    height: 10px;
+    background: #ff5f57;
+    border-radius: 50%;
+}
+
+.window-dots span:nth-child(2) {
+    background: #febc2e;
+}
+
+.window-dots span:nth-child(3) {
+    background: #28c840;
+}
+
+.code-window pre {
+    padding: 20px 12px;
+    margin: 0;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    color: #d8e6f5;
+    font-size: 13px;
+}
+
+.code-purple {
+    color: #c792ea;
+}
+
+.code-green {
+    color: #c3e88d;
+}
+
+
+/* =========================
+   Section Headings
+========================= */
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.section-heading > p {
+    color: var(--primary);
+    font-size: 12px;
+    letter-spacing: 3px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.section-heading h2 {
+    font-size: 38px;
+    font-weight: 800;
+}
+
+.section-heading h2 span {
+    color: var(--primary);
+}
+
+
+/* =========================
+   About Section
+========================= */
+
+.about-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 35px;
+}
+
+.about-card h3 {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.about-card p {
+    color: var(--muted);
+}
+
+.info-item {
+    margin-top: 15px;
+    color: var(--muted);
+    overflow-wrap: anywhere;
+}
+
+.info-item i {
+    color: var(--primary);
+    margin-right: 8px;
+}
+
+.info-item strong {
+    color: var(--text);
+}
+
+.info-item a {
+    color: var(--primary-light);
+}
+
+
+/* =========================
+   Skills Section
+========================= */
+
+.skill-card {
+    height: 100%;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 30px 22px;
+    transition: 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary);
+}
+
+.skill-card > i {
+    font-size: 42px;
+    color: var(--primary);
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.skill-card h3 {
+    font-size: 21px;
+    margin-bottom: 12px;
+}
+
+.skill-card p {
+    min-height: 75px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.skill-bar {
+    width: 100%;
+    height: 6px;
+    background: #25364b;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.skill-bar div {
+    height: 100%;
+    background: var(--primary);
+    border-radius: 10px;
+}
+
+.skill-card small,
+.skills-note {
+    color: var(--muted);
+}
+
+
+/* =========================
+   Projects Section
+========================= */
+
+.project-card {
+    height: 100%;
+    overflow: hidden;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary);
+}
+
+.project-icon {
+    min-height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #123c5d, #0877a5);
+    color: white;
+    font-size: 65px;
+}
+
+.icon-two {
+    background: linear-gradient(135deg, #153b4b, #087f8c);
+}
+
+.icon-three {
+    background: linear-gradient(135deg, #25245a, #5944a6);
+}
+
+.project-body {
+    padding: 25px;
+}
+
+.project-number {
+    color: var(--primary);
+    font-size: 11px;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.project-body h3 {
+    margin: 12px 0;
+    font-size: 23px;
+}
+
+.project-body p {
+    color: var(--muted);
+    font-size: 14px;
+    min-height: 75px;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 20px 0;
+}
+
+.project-tags span {
+    color: var(--primary-light);
+    background: rgba(0, 180, 255, 0.1);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+.project-link {
+    display: inline-block;
+    color: var(--primary);
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.project-link:hover {
+    color: var(--primary-light);
+}
+
+
+/* =========================
+   Education Timeline
+========================= */
+
+.timeline {
+    max-width: 700px;
+    margin: auto;
+    position: relative;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 8px;
+    top: 10px;
+    bottom: 10px;
+    width: 2px;
+    background: var(--primary);
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 40px;
+    margin-bottom: 35px;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 18px;
+    height: 18px;
+    background: var(--primary);
+    border: 4px solid var(--secondary-bg);
+    border-radius: 50%;
+}
+
+.timeline-content {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 25px;
+}
+
+.timeline-content > span {
+    color: var(--primary);
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.timeline-content h3 {
+    margin: 8px 0;
+    font-size: 22px;
+}
+
+.timeline-content p {
+    color: var(--muted);
+    margin-bottom: 0;
+}
+
+
+/* =========================
+   Contact Section
+========================= */
+
+.contact-card {
+    max-width: 700px;
+    margin: auto;
+    padding: 45px 25px;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+}
+
+.contact-icon {
+    font-size: 45px;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.contact-card h3 {
+    font-size: 27px;
+    margin-bottom: 15px;
+}
+
+.contact-card p {
+    max-width: 500px;
+    margin: 0 auto 25px;
+    color: var(--muted);
+}
+
+
+/* =========================
+   Footer
+========================= */
+
+.footer {
+    padding: 35px 0 20px;
+    background: #040b14;
+    border-top: 1px solid var(--border);
+}
+
+.footer-brand {
+    color: var(--text);
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.footer p {
+    color: var(--muted);
+    margin: 12px 0 0;
+}
+
+.footer .copyright {
+    font-size: 13px;
+    margin-top: 15px;
+}
+
+
+/* =========================
+   Responsive Design
+========================= */
+
+@media (max-width: 991px) {
+    .navbar-collapse {
+        padding-top: 15px;
+    }
+
+    .nav-link {
+        margin: 5px 0;
+    }
+
+    .contact-link {
+        display: inline-block;
+        margin-top: 8px;
+    }
+
+    .hero-section {
+        padding-top: 130px;
+    }
+}
+
+@media (max-width: 576px) {
+    .section-padding {
+        padding: 70px 0;
+    }
+
+    .hero-section {
+        padding: 120px 0 70px;
+    }
+
+    .hero-content h1 {
+        font-size: 36px;
+    }
+
+    .hero-content h2 {
+        font-size: 22px;
+    }
+
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+    }
+
+    .outline-btn {
+        margin-left: 0;
+    }
+
+    .section-heading h2 {
+        font-size: 31px;
+    }
+
+    .about-card {
+        padding: 25px 20px;
+    }
+
+    .profile-card {
+        padding: 25px 15px;
+    }
+
+    .project-body p {
+        min-height: auto;
+    }
+
+    .contact-card {
+        padding: 35px 18px;
+    }
+}
+
+
+/* =========================
+   Reduced Motion
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+        animation: none !important;
+    }
+}
